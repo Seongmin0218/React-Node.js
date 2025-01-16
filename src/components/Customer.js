@@ -1,12 +1,17 @@
 import React from "react";
+import TableRow from '@mui/material/TableRow';
+import TableCell from '@mui/material/TableCell';
 
 class Customer extends React.Component {
     render() {
         return(
-            <div>
-                <CustomerProfile id={this.props.id} img={this.props.img}/>
-                <CustomerInfo birthday={this.props.birthday} gender={this.props.gender} />
-            </div>
+            <TableRow>
+                <TableCell>{this.props.id}</TableCell>
+                <TableCell><img src={this.props.image} alt="profile"/></TableCell>
+                <TableCell>{this.props.name}</TableCell>
+                <TableCell>{this.props.birthday}</TableCell>
+                <TableCell>{this.props.gender}</TableCell>
+            </TableRow>
         )
     }
 }
@@ -26,8 +31,8 @@ class CustomerInfo extends React.Component {
     render() {
         return (
             <div>
-                <P>{this.props.birthday}</P>
-                <P>{this.props.gender}</P>
+                <p>{this.props.birthday}</p>
+                <p>{this.props.gender}</p>
             </div>
         )
     }
